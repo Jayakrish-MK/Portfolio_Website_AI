@@ -1,7 +1,12 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,send_file
 import json
 
 app = Flask(__name__)
+
+@app.route('/download-resume', methods=['GET'])
+def download_resume():
+    resume_path = './Jayakrish_MK.pdf'
+    return send_file(resume_path, as_attachment=True)
 
 # Load Langflow agent JSON
 with open("langflow_agent.json") as f:

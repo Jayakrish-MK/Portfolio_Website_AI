@@ -1,8 +1,5 @@
 function downloadResume() {
-    const resumePath = './Jayakrish_MK.pdf';  // Path to your resume file
-
-    // Fetch the resume file
-    fetch(resumePath)
+    fetch('https://your-backend-url.com/download-resume')
         .then(response => response.blob())
         .then(blob => {
             const link = document.createElement('a');
